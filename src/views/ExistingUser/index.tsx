@@ -7,16 +7,24 @@ import {
   StatusBar,
 } from 'react-native'
 import { Navigation } from 'react-native-navigation'
+import { inject, observer } from 'mobx-react'
 
+// Components
 import Button from '../../components/Button'
 
-import { normalize } from '../../utils/size'
-import { inject, observer } from 'mobx-react'
+// Utils
+import { goToHistory } from '../../utils/navigation'
+import { ViewProps } from '../../utils/views'
+
+// Constants
 import { translate } from '../../constants/i18n'
 import { colors } from '../../constants/colors'
 import { sizes } from '../../constants/sizes'
 
-class ExistingUser extends React.Component {
+class ExistingUser extends React.Component<ViewProps> {
+  handleImportAccount() {
+    goToHistory()
+  }
 
   render() {
     const { theme } = this.props.store.settings
@@ -38,7 +46,7 @@ class ExistingUser extends React.Component {
               <Button
                 text={translate('general.importAccount')}
                 background={colors[theme].green}
-                onPress={() => {}}
+                onPress={this.handleImportAccount}
               />
             </View>
           </View>

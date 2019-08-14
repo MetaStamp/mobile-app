@@ -10,5 +10,9 @@ export const colors = {
   [Theme.LIGHT]: {
     blue: '#00b9ff',
     green: '#00d360'
+  },
+  [Theme.DARK]: {
+    blue: '#00b9ff',
+    green: '#00d360'
   }
 }

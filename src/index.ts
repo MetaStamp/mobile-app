@@ -5,6 +5,7 @@ import { Navigation } from 'react-native-navigation'
 import App from './views/First'
 import NewUser from './views/NewUser'
 import ExistingUser from './views/ExistingUser'
+import History from './views/History'
 
 // Constants
 import * as Screens from './constants/screenIds'
@@ -14,11 +15,13 @@ import store from './stores'
 
 // Utils
 import { screenWrapper } from './utils/screens'
+import { goToFirstScreen } from './utils/navigation';
 
 const registerScreens = () => {
   Navigation.registerComponent(Screens.SCREEN_FIRST, () => screenWrapper(App, store), () => App)
   Navigation.registerComponent(Screens.SCREEN_NEW_USER, () => screenWrapper(NewUser, store), () => NewUser)
   Navigation.registerComponent(Screens.SCREEN_EXISTING_USER, () => screenWrapper(ExistingUser, store), () => ExistingUser)
+  Navigation.registerComponent(Screens.SCREEN_HISTORY, () => screenWrapper(History, store), () => History)
 }
 
 registerScreens()
@@ -29,29 +32,5 @@ registerScreens()
 
 Navigation.events().registerAppLaunchedListener(async () => {
   // TODO: Make auth and transfer accordingly
-
-  // Navigation.setRoot({
-  //   root: {
-  //     component: {
-  //       name: Screens.SCREEN_FIRST
-  //     }
-  //   }
-  // })
-
-  Navigation.setRoot({
-    root: {
-      stack: {
-        children: [{
-          component: {
-            name: Screens.SCREEN_FIRST,
-            options: {
-              topBar: {
-                visible: false
-              }
-            }
-          },
-        }]
-      }
-    }
-  })
+  goToFirstScreen()
 })

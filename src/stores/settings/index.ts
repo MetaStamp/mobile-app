@@ -1,4 +1,4 @@
-import { types as t } from 'mobx-state-tree'
+import { types as t, Instance } from 'mobx-state-tree'
 import i18n from 'i18n-js'
 
 import { Theme } from '../../constants/colors'
@@ -23,3 +23,5 @@ const Settings = t
   }))
 
 export default Settings
+
+export interface ISettingsStore extends Instance<typeof Settings> {}

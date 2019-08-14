@@ -13,7 +13,8 @@ import { inject, observer } from 'mobx-react'
 import Button from '../../components/Button'
 
 // Utils
-import { normalize } from '../../utils/size'
+import { goToNewUser, goToExistingUser } from '../../utils/navigation'
+import { ViewProps } from '../../utils/views'
 
 // Constants
 import { translate } from '../../constants/i18n'
@@ -21,41 +22,13 @@ import { colors } from '../../constants/colors'
 import * as Screens from '../../constants/screenIds'
 import { sizes } from '../../constants/sizes'
 
-class First extends React.Component {
+class First extends React.Component<ViewProps> {
   handleNewUser = () => {
-    Navigation.push(this.props.componentId, {
-      component: {
-        name: Screens.SCREEN_NEW_USER,
-        options: {
-          topBar: {
-            title: {
-              text: translate('First.iAmNew'),
-            },
-            backButton: {
-              title: translate('general.back')
-            }
-          }
-        }
-      }
-    });
+    goToNewUser(this.props.componentId)
   }
   
   handleExistingUser = () => {
-    Navigation.push(this.props.componentId, {
-      component: {
-        name: Screens.SCREEN_EXISTING_USER,
-        options: {
-          topBar: {
-            title: {
-              text: translate('general.importAccount'),
-            },
-            backButton: {
-              title: translate('general.back')
-            }
-          }
-        }
-      }
-    });
+    goToExistingUser(this.props.componentId)
   }
 
   render() {

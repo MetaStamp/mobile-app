@@ -31,6 +31,9 @@ export const translations = {
     ExistingUser: {
       welcome: 'You are a good person to work with',
       text1: 'Paste your seed phrase or private key here to import it into an application',
+    },
+    History: {
+      title: 'History'
     }
   },
 }

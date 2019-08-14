@@ -1,8 +1,10 @@
 import React from 'react'
 import { Navigation } from 'react-native-navigation'
 
-// Screens
+// Views
 import App from './views/First'
+import NewUser from './views/NewUser'
+import ExistingUser from './views/ExistingUser'
 
 // Constants
 import * as Screens from './constants/screenIds'
@@ -15,17 +17,40 @@ import { screenWrapper } from './utils/screens'
 
 const registerScreens = () => {
   Navigation.registerComponent(Screens.SCREEN_FIRST, () => screenWrapper(App, store), () => App)
+  Navigation.registerComponent(Screens.SCREEN_NEW_USER, () => screenWrapper(NewUser, store), () => NewUser)
+  Navigation.registerComponent(Screens.SCREEN_EXISTING_USER, () => screenWrapper(ExistingUser, store), () => ExistingUser)
 }
 
 registerScreens()
 
+// Navigation.setDefaultOptions({
+//   bac
+// })
+
 Navigation.events().registerAppLaunchedListener(async () => {
   // TODO: Make auth and transfer accordingly
 
+  // Navigation.setRoot({
+  //   root: {
+  //     component: {
+  //       name: Screens.SCREEN_FIRST
+  //     }
+  //   }
+  // })
+
   Navigation.setRoot({
     root: {
-      component: {
-        name: Screens.SCREEN_FIRST
+      stack: {
+        children: [{
+          component: {
+            name: Screens.SCREEN_FIRST,
+            options: {
+              topBar: {
+                visible: false
+              }
+            }
+          },
+        }]
       }
     }
   })

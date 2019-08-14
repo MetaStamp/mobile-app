@@ -12,10 +12,25 @@ export const translate = memoize(
 
 export const translations = {
   en: {
-    first: {
+    general: {
+      back: 'Back',
+      importAccount: 'Import account'
+    },
+    First: {
       welcome: 'Welcome to MetaStamp.IO',
       labelNewUser: "Don't know what to do?",
       labelOldUser: "Already have seed phrase or private key?",
+      iAmNew: "I'm newbe",
     },
+    NewUser: {
+      welcome: "Look at him!\nWe've got a noob here",
+      savedThePhrase: 'I have saved the phrase',
+      text1: 'We have made everything for you man',
+      text2: 'Write down and save this seed phrase under your bed as you will more likely need it in future'
+    },
+    ExistingUser: {
+      welcome: 'You are a good person to work with',
+      text1: 'Paste your seed phrase or private key here to import it into an application',
+    }
   },
 }

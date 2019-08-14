@@ -10,7 +10,7 @@ import { colors } from '../../constants/colors'
 
 interface Props {
   text: String,
-  background: String,
+  background?: string,
   onPress: () => void
 }
 
@@ -28,7 +28,11 @@ const Button = ({ text, onPress, background }: Props) => {
   )
 }
 
-const styles = ({ background }) => StyleSheet.create({
+interface ButtonStyles {
+  background?: string
+}
+
+const styles = ({ background }: ButtonStyles) => StyleSheet.create({
   button: {
     paddingHorizontal: normalize(30),
     paddingVertical: normalize(10),

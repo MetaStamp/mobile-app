@@ -8,9 +8,19 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "@babel/plugin-proposal-decorators": "^7.4.4",
+    "@types/i18n-js": "^3.0.1",
+    "@types/lodash.memoize": "^4.1.6",
+    "@types/react-native": "^0.60.4",
+    "i18n-js": "^3.3.0",
+    "lodash.memoize": "^4.1.2",
+    "mobx": "^5.13.0",
+    "mobx-react": "^6.1.3",
+    "mobx-state-tree": "^3.14.1",
     "react": "16.8.6",
     "react-native": "0.60.4",
-    "react-native-navigation": "^2.26.5"
+    "react-native-localize": "^1.1.4",
+    "react-native-navigation": "^3.0.0-alpha.11-snapshot.451"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",

@@ -33,7 +33,13 @@ export const translations = {
       text1: 'Paste your seed phrase or private key here to import it into an application',
     },
     History: {
-      title: 'History'
+      title: 'History',
+      application: 'Application',
+      date: 'Date',
+      status: 'Status',
+      confirmed: 'Confirmed',
+      rejected: 'Rejected',
+      scan: 'Scan'
     }
   },
 }

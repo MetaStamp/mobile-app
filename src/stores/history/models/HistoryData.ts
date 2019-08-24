@@ -1,9 +1,5 @@
 import { types as t, Instance } from 'mobx-state-tree'
-
-export enum SignatureStatus {
-  confirmed = 'confirmed',
-  rejected = 'rejected'
-}
+import { SignatureStatus } from '../../../constants/statuses'
 
 export const HistoryData = t.model('HistoryData', {
   id: t.number,

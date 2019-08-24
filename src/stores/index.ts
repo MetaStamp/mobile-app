@@ -8,6 +8,7 @@ import History from './history/'
 // Constants
 import { Theme } from '../constants/colors'
 import { Language } from '../constants/i18n'
+import { SignatureStatus } from '../constants/statuses'
 
 const AppStore = t.
   model('AppStore', {
@@ -21,15 +22,15 @@ const AppStore = t.
           id: 1,
           timestamp: 0,
           application: 'dib.one',
-          logo: '',
-          status: 'confirmed'
+          logo: 'https://pbs.twimg.com/profile_images/998895674522353665/mQFAbUOX_400x400.jpg',
+          status: SignatureStatus.confirmed
         },
         {
           id: 2,
           timestamp: 0,
           application: 'radarrelay.com',
-          logo: '',
-          status: 'rejected'
+          logo: 'https://pbs.twimg.com/profile_images/998895674522353665/mQFAbUOX_400x400.jpg',
+          status: SignatureStatus.rejected
         }
       ]
     })

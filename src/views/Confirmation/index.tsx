@@ -35,13 +35,21 @@ interface ProtocolDataProps {
 class Confirmation extends React.Component<ViewProps & ProtocolDataProps> {
   handleStatusPress = (status: SignatureStatus, data: IHistoryData) => async () => {
     if (status == SignatureStatus.confirmed) {
-      await fetch(data.hook, {
+      const res = await fetch(data.hook, {
         method: 'POST',
-        body: {
+        body: JSON.stringify({
           id: data.id,
           signature: '0x13371488'
+        }),
+        headers: {
+          'Content-Type': 'application/json'
         }
       })
+
+      if (res.status != 200) {
+        console.warn(res.status)
+        return
+      }
     }
     this.props.store.history.addNew(status, data)
     goToHistory()

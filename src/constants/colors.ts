@@ -13,6 +13,7 @@ export const colors = {
     confirmed: '#00d360',
     rejected: '#b60000',
     itemSplitter: '#3d3d3d',
+    grey: '#909596',
   },
   [Theme.DARK]: {
     blue: '#00b9ff',
@@ -20,5 +21,6 @@ export const colors = {
     confirmed: '#00d360',
     rejected: '#b60000',
     itemSplitter: '#d8d8d8',
+    grey: '#909596',
   }
 }

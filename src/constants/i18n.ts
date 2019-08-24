@@ -14,7 +14,9 @@ export const translations = {
   en: {
     general: {
       back: 'Back',
-      importAccount: 'Import account'
+      importAccount: 'Import account',
+      application: 'Application',
+      scan: 'Scan',
     },
     First: {
       welcome: 'Welcome to MetaStamp.IO',
@@ -34,12 +36,17 @@ export const translations = {
     },
     History: {
       title: 'History',
-      application: 'Application',
       date: 'Date',
       status: 'Status',
       confirmed: 'Confirmed',
       rejected: 'Rejected',
-      scan: 'Scan'
+    },
+    Confirmation: {
+      title: 'Confirmation',
+      message: 'Message',
+      description: 'Provided description',
+      reject: 'REJECT',
+      confirm: 'CONFIRM',
     }
   },
 }

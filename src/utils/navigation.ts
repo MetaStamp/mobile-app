@@ -3,6 +3,7 @@ import { Navigation } from 'react-native-navigation'
 // Constants
 import * as Screens from '../constants/screenIds'
 import { translate } from '../constants/i18n'
+import { IHistoryData } from '../stores/history/models/HistoryData'
 
 export const goToFirstScreen = () => {
   Navigation.setRoot({
@@ -75,6 +76,45 @@ export const goToHistory = () => {
             }
           },
         }]
+      }
+    }
+  })
+}
+
+export const goToScan = (componentId: string) => {
+  Navigation.push(componentId, {
+    component: {
+      name: Screens.SCREEN_SCAN,
+      options: {
+        topBar: {
+          title: {
+            text: translate('general.scan'),
+          },
+          backButton: {
+            title: translate('general.back')
+          }
+        }
+      }
+    }
+  })
+}
+
+export const goToConfirmation = (componentId: string, data: IHistoryData) => {
+  Navigation.push(componentId, {
+    component: {
+      name: Screens.SCREEN_CONFIRMATION,
+      passProps: {
+        data
+      },
+      options: {
+        topBar: {
+          title: {
+            text: translate('Confirmation.title'),
+          },
+          backButton: {
+            title: translate('general.back')
+          }
+        }
       }
     }
   })

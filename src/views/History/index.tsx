@@ -16,6 +16,7 @@ import moment from 'moment'
 
 // Utils
 import { ViewProps } from '../../utils/views'
+import { goToScan } from '../../utils/navigation'
 
 // Components
 import Button from '../../components/Button'
@@ -39,7 +40,7 @@ class History extends React.Component<ViewProps> {
   }
 
   handleScanPress = () => {
-
+    goToScan(this.props.componentId)
   }
 
   renderItem = ({ item }: RenderItemArgs) => {
@@ -56,14 +57,14 @@ class History extends React.Component<ViewProps> {
         />
         <View style={styles.info}>
           <View style={styles.infoItem}>
-            <Text>{translate('History.application') + ': '}</Text>
+            <Text>{translate('general.application') + ': '}</Text>
             <TouchableOpacity
-              onPress={this.handleLinkPress(item.application)}
+              onPress={this.handleLinkPress(item.domain)}
             >
               <Text
                 style={themedStyle.link}
               >
-                {item.application}
+                {item.domain}
               </Text>
             </TouchableOpacity>
           </View>
@@ -92,6 +93,8 @@ class History extends React.Component<ViewProps> {
       />
     )
   }
+  
+  keyExtractor = (item: IHistoryData) => item.id.toString()
 
   render() {
     const { data } = this.props.store.history
@@ -108,10 +111,11 @@ class History extends React.Component<ViewProps> {
               data={data}
               renderItem={this.renderItem}
               ItemSeparatorComponent={this.renderSeparator}
+              keyExtractor={this.keyExtractor}
             />
             <View style={styles.scan}>
               <Button
-                text={translate('History.scan')}
+                text={translate('general.scan')}
                 onPress={this.handleScanPress}
                 background={colors[theme].green}
               />

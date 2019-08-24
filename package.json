@@ -12,6 +12,7 @@
     "@types/i18n-js": "^3.0.1",
     "@types/lodash.memoize": "^4.1.6",
     "@types/react-native": "^0.60.4",
+    "@types/validator": "^10.11.3",
     "i18n-js": "^3.3.0",
     "lodash.memoize": "^4.1.2",
     "mobx": "^5.13.0",
@@ -20,8 +21,10 @@
     "moment": "^2.24.0",
     "react": "16.8.6",
     "react-native": "0.60.4",
+    "react-native-camera": "^3.3.0",
     "react-native-localize": "^1.1.4",
-    "react-native-navigation": "^3.0.0-alpha.11-snapshot.451"
+    "react-native-navigation": "^3.0.0-alpha.11-snapshot.451",
+    "validator": "^11.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",

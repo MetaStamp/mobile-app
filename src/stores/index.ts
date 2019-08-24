@@ -17,22 +17,7 @@ const AppStore = t.
       language: Language[RNLocalize.getLocales()[0].languageCode],
     }),
     history: t.optional(History, {
-      data: [
-        {
-          id: 1,
-          timestamp: 0,
-          application: 'dib.one',
-          logo: 'https://pbs.twimg.com/profile_images/998895674522353665/mQFAbUOX_400x400.jpg',
-          status: SignatureStatus.confirmed
-        },
-        {
-          id: 2,
-          timestamp: 0,
-          application: 'radarrelay.com',
-          logo: 'https://pbs.twimg.com/profile_images/998895674522353665/mQFAbUOX_400x400.jpg',
-          status: SignatureStatus.rejected
-        }
-      ]
+      data: []
     })
   })
 

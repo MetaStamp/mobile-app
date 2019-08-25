@@ -17,6 +17,7 @@ import store from './stores'
 // Utils
 import { screenWrapper } from './utils/screens'
 import { goToFirstScreen } from './utils/navigation';
+import gaba from './utils/gaba';
 
 const registerScreens = () => {
   Navigation.registerComponent(Screens.SCREEN_FIRST, () => screenWrapper(App, store), () => App)
@@ -36,4 +37,5 @@ registerScreens()
 Navigation.events().registerAppLaunchedListener(async () => {
   // TODO: Make auth and transfer accordingly
   goToFirstScreen()
+  gaba.init()
 })

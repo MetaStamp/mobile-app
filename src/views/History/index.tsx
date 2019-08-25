@@ -93,6 +93,14 @@ class History extends React.Component<ViewProps> {
       />
     )
   }
+
+  renderListEmpty = () => {
+    return (
+      <View style={styles.listEmpty}>
+        <Text>{translate('History.listEmpty')}</Text>
+      </View>
+    )
+  }
   
   keyExtractor = (item: IHistoryData) => item.id.toString()
 
@@ -112,6 +120,7 @@ class History extends React.Component<ViewProps> {
               renderItem={this.renderItem}
               ItemSeparatorComponent={this.renderSeparator}
               keyExtractor={this.keyExtractor}
+              ListEmptyComponent={this.renderListEmpty}
             />
             <View style={styles.scan}>
               <Button
@@ -151,6 +160,11 @@ const styles = StyleSheet.create({
   scan: {
     position: 'absolute',
     bottom: sizes.margin.small
+  },
+  listEmpty: {
+    height: '100%',
+    justifyContent: 'space-around',
+    alignItems: 'center'
   }
 })
 

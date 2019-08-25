@@ -13,8 +13,9 @@ import { inject, observer } from 'mobx-react'
 import Button from '../../components/Button'
 
 // Utils
-import { goToNewUser, goToExistingUser } from '../../utils/navigation'
+import { goToExistingUser, goToHistory } from '../../utils/navigation'
 import { ViewProps } from '../../utils/views'
+import gaba from '../../utils/gaba'
 
 // Constants
 import { translate } from '../../constants/i18n'
@@ -23,8 +24,9 @@ import * as Screens from '../../constants/screenIds'
 import { sizes } from '../../constants/sizes'
 
 class First extends React.Component<ViewProps> {
-  handleNewUser = () => {
-    goToNewUser(this.props.componentId)
+  handleNewUser = async () => {
+    await gaba.createVault()
+    goToHistory()
   }
   
   handleExistingUser = () => {
